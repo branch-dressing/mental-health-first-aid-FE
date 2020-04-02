@@ -1,6 +1,6 @@
 import { request } from './request';
 
-export const getSignupUser = user => 
+export const getSignUpUser = user => 
   request('/api/v1/auth/signup', 'POST', user);
 
 export const getLoginUser = user => 

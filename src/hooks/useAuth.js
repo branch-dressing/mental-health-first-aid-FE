@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authorizeUser, SET_SESSION_ERROR } from '../actions/authActions';
-import { getSignupUser, getLoginUser } from '../services/authServices';
+import { getSignUpUser, getLoginUser } from '../services/authServices';
 import { useHistory } from 'react-router-dom';
 
 export const useAuth = (type) => {
@@ -20,7 +20,7 @@ export const useAuth = (type) => {
     if(password !== retypePassword) {
       console.log('Passwords must match');
     } else {
-      return dispatch(authorizeUser(user, (type === 'signup') ? getSignupUser : getLoginUser))
+      return dispatch(authorizeUser(user, (type === 'signup') ? getSignUpUser : getLoginUser))
         .then(res => {
           if(res.type === SET_SESSION_ERROR) {
             throw new Error(res.payload.message);
