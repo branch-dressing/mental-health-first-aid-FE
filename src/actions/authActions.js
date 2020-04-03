@@ -19,10 +19,11 @@ export const setSessionError = error => ({
   payload: error
 });
 
-export const authorizeUser = (user, authFunction) => dispatch => {
+export const authorizeUser = (body, authFunction) => dispatch => {
   dispatch(setSessionLoading());
-  return authFunction(user)
+  return authFunction(body)
     .then(user => {
+      console.log(user);
       dispatch(setSession(user));
       dispatch(setSessionDone());
       return user;
