@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEventForm } from '../hooks/useEventForm';
+import { useEventForm } from '../../hooks/forms/useEventForm';
 
 export const EventForm = () => {
   const { title, setTitle, date, setDate, success, handleSubmit } = useEventForm();

@@ -12,9 +12,9 @@ import { Footer } from './Footer';
 import { PrivateRoute } from './authComponents/PrivateRoute';
 import { NewUser } from './NewUser';
 import { Profile } from './profile/Profile';
-import { PositiveForm } from './PositiveForm';
+import { PositiveForm } from './forms/PositiveForm';
 import { Breathing } from './Breathing';
-import { MoodForm } from './MoodForm';
+import { MoodForm } from './forms/MoodForm';
 
 export default function App() {
   return (

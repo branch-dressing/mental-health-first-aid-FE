@@ -1,5 +1,5 @@
 import React from 'react';
-import { MoodForm } from '../MoodForm';
+import { MoodForm } from '../forms/MoodForm';
 import { useMood } from '../../hooks/useMood';
 
 export const Moods = () => {

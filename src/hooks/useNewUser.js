@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { EventForm } from '../components/EventForm';
-import { MoodForm } from '../components/MoodForm';
-import { PositiveForm } from '../components/PositiveForm';
+import { EventForm } from '../components/forms/EventForm';
+import { MoodForm } from '../components/forms/MoodForm';
+import { PositiveForm } from '../components/forms/PositiveForm';
 import { CopyLink } from '../components/CopyLink';
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { toGetEvent, toGetPositives, toGetMoods, toGetAuth } from '../selectors/useSelectors';
-import { updateUser, setSession } from '../actions/authActions';
+import { updateUser } from '../actions/authActions';
 
 export const useNewUser = () => {
   const { loading: eventCreated } = useSelector(toGetEvent);
