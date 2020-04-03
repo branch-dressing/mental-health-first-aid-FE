@@ -20,7 +20,7 @@ export const useAuth = (type) => {
     if(password !== retypePassword) {
       console.log('Passwords must match');
     } else {
-      return dispatch(authorizeUser(user, (type === 'signup') ? getSignUpUser : getLoginUser))
+      return dispatch(authorizeUser(user, (type === 'signUp') ? getSignUpUser : getLoginUser))
         .then(res => {
           if(res.type === SET_SESSION_ERROR) {
             throw new Error(res.payload.message);

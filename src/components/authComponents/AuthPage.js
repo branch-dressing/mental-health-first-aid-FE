@@ -7,14 +7,14 @@ import { toGetAuth } from '../../selectors/useSelectors';
 export const AuthPage = () => {
   const { error } = useSelector(toGetAuth);
   const errorMessage = error ? (<p>{error.message}</p>) : (<></>);
-  const [signup, setSignUp] = useState(true);
+  const [signUp, setSignUp] = useState(true);
 
-  const buttonText = signup ? 'I want to Login' : 'I need SignUp';
+  const buttonText = signUp ? 'I want to Login' : 'I need SignUp';
 
   return (
     <>
-      <button onClick={() => setSignUp(!signup)}>{buttonText}</button>
-      {signup ? <SignUp /> : <Login />}
+      <button onClick={() => setSignUp(!signUp)}>{buttonText}</button>
+      {signUp ? <SignUp /> : <Login />}
       {errorMessage}
     </> 
   );

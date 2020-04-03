@@ -24,7 +24,7 @@ export const MoodForm = ({ importId, importMoodName, importSolutions }) => {
 
   return success ? (
     <section>
-      <p>Note Created!</p>
+      <p>Created!</p>
     </section>
   ) : (
     <section>

@@ -13,6 +13,22 @@ describe('AUTH REDUCER', () => {
     });
   });
 
+  it('can override specific part of the sessions', () => {
+    const actionOne = setSession({ userName: 'Joel', newUser: true });
+    const newStateOne = authReducer(undefined, actionOne);
+    expect(newStateOne.user).toEqual({
+      userName: 'Joel',
+      newUser: true
+    });
+    
+    const actionTwo = setSession({ ...newStateOne.user, newUser: false });
+    const newStateTwo = authReducer(newStateOne, actionTwo);
+    expect(newStateTwo.user).toEqual({
+      userName: 'Joel',
+      newUser: false
+    });
+  });
+
   it('handles an error action', () => {
     const action = setSessionError('NOPE!');
     const newState = authReducer(undefined, action);

@@ -5,13 +5,14 @@ import { PositiveForm } from '../components/PositiveForm';
 import { CopyLink } from '../components/CopyLink';
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { toGetEvent, toGetPositives, toGetMoods } from '../selectors/useSelectors';
-import { updateUser } from '../actions/authActions';
+import { toGetEvent, toGetPositives, toGetMoods, toGetAuth } from '../selectors/useSelectors';
+import { updateUser, setSession } from '../actions/authActions';
 
 export const useNewUser = () => {
   const { loading: eventCreated } = useSelector(toGetEvent);
   const { loading: positiveCreated } = useSelector(toGetPositives);
   const { loading: moodCreated } = useSelector(toGetMoods);
+  const { user } = useSelector(toGetAuth);
   const [currentRender, setCurrentRender] = useState((<></>));
   const [index, setIndex] = useState(0);
   const history = useHistory();
@@ -101,7 +102,7 @@ export const useNewUser = () => {
     {
       title: 'Positives',
       text: 'Or you can send the link below to the people who lift you up, and they can send you a positive message. (They don’t need an account).',
-      component: <CopyLink key={4} link={`localhost:7890/positive?friendcode=${friendCode}`} />
+      component: <CopyLink key={4} link={`https://mental-health-dev.netlify.com/positive?friendcode=${friendCode}`} />
     },
     {
       title: 'Congrats!',
@@ -119,7 +120,10 @@ export const useNewUser = () => {
   }, [index]);
 
   const handleNext = () => {
-    if(index === slides.length - 1) dispatch(updateUser({ newUser: false }));
+    if(index === slides.length - 1) {
+      dispatch(updateUser({ newUser: false }));
+      dispatch(setSession({ user: { ...user, newUser: false } }));
+    }
     if(index < slides.length - 1) setIndex(index + 1);
     else history.push('./profile');
   };
