@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { toGetAuth } from '../../selectors/useSelectors';
 import { usePositives } from '../../hooks/usePositives';
+import { CopyLink } from '../CopyLink';
 
 export const Positives = () => {
   const history = useHistory();
@@ -30,7 +31,8 @@ export const Positives = () => {
       </div>
       {link || allPositives < 1 ? (
         <div>
-          <p>Click &quot;Create New&quot;, or share this link: localhost:7890/positive?friendcode={friendCode}</p>
+          <p>Click &quot;Create New&quot;, or share this link:</p>
+          <CopyLink link={`https://mental-health-dev.netlify.com/positive?friendcode=${friendCode}`} />
           <button onClick={() => setLink(!link)}>Okay</button>
         </div>
       ) : (<></>)}
