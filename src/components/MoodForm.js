@@ -24,7 +24,7 @@ export const MoodForm = ({ importId, importMoodName, importSolutions }) => {
 
   return success ? (
     <section>
-      <p>Created!</p>
+      {importId ? <p>Created!</p> : <p>Updated</p> }
     </section>
   ) : (
     <section>

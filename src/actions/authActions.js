@@ -23,7 +23,6 @@ export const authorizeUser = (body, authFunction) => dispatch => {
   dispatch(setSessionLoading());
   return authFunction(body)
     .then(user => {
-      console.log(user);
       dispatch(setSession(user));
       dispatch(setSessionDone());
       return user;

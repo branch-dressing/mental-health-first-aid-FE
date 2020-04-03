@@ -28,11 +28,11 @@ export const useNewUser = () => {
     },
     {
       title: 'Hello!',
-      text: 'You should be able to open this app, and find what will help you for wherever your mental health is at the moment.'
+      text: 'You should be able to log on and find exactly what you neeed at that moment.'
     },
     {
       title: 'Hello!',
-      text: 'You kit is currently empty.'
+      text: 'Your kit is currently empty.'
     },
     {
       title: 'Hello!',
@@ -64,11 +64,11 @@ export const useNewUser = () => {
     },
     {
       title: 'Feelings',
-      text: 'Sometimes we can’t get rid of the feeling, but we can find ways to sit with it or get through it.'
+      text: 'We can’t always get rid of the feeling, but we can find ways to sit with it or get through it.'
     },
     {
       title: 'Feelings',
-      text: 'What is a feeling you\'ve struggled with, and what are some things you might do in response?',
+      text: 'What is a feeling you\'ve struggled with, and what are some things you might do or have done in response?',
       component: (<MoodForm key={1} />),
       conditions: moodCreated
     },
@@ -87,7 +87,7 @@ export const useNewUser = () => {
     },
     {
       title: 'Positives',
-      text: 'Take a moment to send a message your future self with something you admire/like/value about who you are.'
+      text: 'Take a moment to send a message to your future self with something you like/admire/value about who you are.'
     },
     {
       title: 'Positives',
@@ -120,10 +120,7 @@ export const useNewUser = () => {
   }, [index]);
 
   const handleNext = () => {
-    if(index === slides.length - 1) {
-      dispatch(updateUser({ newUser: false }));
-      dispatch(setSession({ user: { ...user, newUser: false } }));
-    }
+    if(index === slides.length - 1) dispatch(updateUser({ newUser: false }));
     if(index < slides.length - 1) setIndex(index + 1);
     else history.push('./profile');
   };
