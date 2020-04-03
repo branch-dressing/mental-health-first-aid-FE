@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useEventForm } from '../../hooks/useEventForm';
+import { useEventForm } from '../../hooks/forms/useEventForm';
 import { useEvent } from '../../hooks/useEvent';
 
 export const Event = () => {

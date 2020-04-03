@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { fetchPostPositive, SET_POSITIVE_ERROR } from '../actions/positiveActions';
+import { fetchPostPositive, SET_POSITIVE_ERROR } from '../../actions/positiveActions';
 import { useLocation } from 'react-router-dom';
 
 export const usePositiveForm = () => {

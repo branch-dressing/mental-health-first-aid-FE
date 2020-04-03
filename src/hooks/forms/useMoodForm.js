@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchPostMood, SET_MOOD_ERROR, fetchPatchMood } from '../actions/moodActions';
+import { fetchPostMood, SET_MOOD_ERROR, fetchPatchMood } from '../../actions/moodActions';
 
 export const useMoodForm = (state) => {
   const dispatch = useDispatch();
-  const [updating, setUpating] = useState(!!state.moodName);
   const [success, setSuccess] = useState(false);
   const [moodName, setMoodName] = useState(state.moodName ? state.moodName : '');
   const [solutions, setSolutions] = useState(state.solutions ? state.solutions : ['new']);
@@ -35,7 +34,7 @@ export const useMoodForm = (state) => {
         return acc;
       }, []);
     }
-    if(updating) return dispatch(fetchPatchMood(state.id, { moodName, solutions: solutionsCopy }))
+    if(state.moodName) return dispatch(fetchPatchMood(state.id, { moodName, solutions: solutionsCopy }))
       .then(res => wrapUp(res));
 
     else return dispatch(fetchPostMood({ moodName, solutions: solutionsCopy }))

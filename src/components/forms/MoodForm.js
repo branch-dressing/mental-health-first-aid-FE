@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useMoodForm } from '../hooks/useMoodForm';
-import { Solution } from './Solution';
+import { useMoodForm } from '../../hooks/forms/useMoodForm';
+import { Solution } from '../Solution';
 
 export const MoodForm = ({ importId, importMoodName, importSolutions }) => {
   const { success, 

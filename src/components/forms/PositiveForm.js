@@ -1,5 +1,5 @@
 import React from 'react';
-import { usePositiveForm } from '../hooks/usePositiveForm';
+import { usePositiveForm } from '../../hooks/forms/usePositiveForm';
 
 export const PositiveForm = () => {
   const { message, setMessage, friendCode, setFriendCode, author, setAuthor, success, setSuccess, handleSubmit, friendCodeFromURL, usernameFromURL } = usePositiveForm();

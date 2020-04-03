@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { fetchPatchEvent, SET_EVENT_ERROR, setEventError } from '../actions/eventActions';
+import { fetchPatchEvent, SET_EVENT_ERROR, setEventError } from '../../actions/eventActions';
 
 export const useEventForm = () => {
   const dispatch = useDispatch();
