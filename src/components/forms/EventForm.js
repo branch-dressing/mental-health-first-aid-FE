@@ -5,7 +5,7 @@ export const EventForm = () => {
   const { title, setTitle, date, setDate, success, handleSubmit } = useEventForm();
 
   return success ? (
-    <p>Your Event has been created! You are looking forward to {title} on {date}!</p>
+    <p>Your Event has been created! You are looking forward to {title} on {date.slice(5)}!</p>
   ) : (
     <section>
       <div>
