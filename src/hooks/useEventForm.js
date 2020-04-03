@@ -13,7 +13,7 @@ export const useEventForm = () => {
       message: 'All fields must be filled out',
       status: 400
     }));
-    else return dispatch(fetchPatchEvent({ title, date }))
+    else return dispatch(fetchPatchEvent({ title, date: new Date(date + 'T12:00:00Z') }))
       .then(res => {
         if(res.type === SET_EVENT_ERROR) throw new Error(res.payload.message);
         else setSuccess(true);
