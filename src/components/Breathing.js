@@ -2,49 +2,54 @@ import React, { useState, useEffect } from 'react';
 
 
 export const Breathing = () => {
+  const [running, setRunning] = useState(false);
   const [seconds, setSeconds] = useState(0);
-  const [currentDirection, setCurrentDirection] = useState('Breath In');
-  
-  const [inhale, setInhale] = useState(true);
+  const [currentDirection, setCurrentDirection] = useState('');
 
   useEffect(() => {
-    if(inhale) {
+    console.log(running);
+    if(running) {
+      setSeconds(1);
+      setCurrentDirection('Breath In');
+    }
+  }, [running]);
+
+  useEffect(() => {
+    if(running && seconds === 8) {
+      setTimeout(() => {
+        setSeconds(seconds - 1);
+        setCurrentDirection('Breath Out');
+      }, 100);
+    }
+    if(running && currentDirection === 'Breath In' && seconds < 8) {
       setTimeout(() => {
         setSeconds(seconds + 1);
       }, 1000);
-    } else {
+    }
+  }, [seconds]);
+
+  useEffect(() => {
+    if(running && seconds === 0) {
+      setSeconds(seconds + 1);
+      setCurrentDirection('Breath In');
+    }
+    if(running && currentDirection === 'Breath Out' && seconds > 0) {
       setTimeout(() => {
         setSeconds(seconds - 1);
       }, 1000);
     }
-    if(seconds > 3) {
-      setInhale(false);
-      setCurrentDirection('Breath OUT');
-    }
-    if(seconds < 3) {
-      setInhale(true);
-      setCurrentDirection('Breath IN');}
-
-    // if(seconds <= cycleCount[phase]) {
-    //   setTimeout(() => {
-    //     setSeconds(seconds + 1);
-    //   }, 1000);
-    // } else if(phase < 2) {
-    //   setPhase(phase + 1);
-    //   setSeconds(1);
-    //   setCurrentDirection(directions[phase + 1]);
-    // } else if(phase > 1) {
-    //   setPhase(0);
-    //   setSeconds(1);
-    //   setCurrentDirection(directions[0]);
-    // }
   }, [seconds]);
+
+  const handleClick = () => {
+    setRunning(!running);
+  };
 
 
   return (
     <section>
       <p>{seconds}</p>
       <p>{currentDirection}</p>
+      <button onClick={handleClick}>{running ? 'Stop' : 'Start'}</button>
     </section>
 
   );
