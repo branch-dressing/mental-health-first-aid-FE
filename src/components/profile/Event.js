@@ -27,7 +27,10 @@ export const Event = () => {
 
       {showEventForm || !event ? (
         <div>
-          <button onClick={handleSubmit}>Update</button>
+          <button onClick={() => {
+            handleSubmit()
+              .then(success => setShowEventForm(!success));
+          }}>Update</button>
           <button onClick={() => setShowEventForm(!showEventForm)}>Cancel</button>
         </div>
       ) : (
