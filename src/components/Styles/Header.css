@@ -1,0 +1,9 @@
+.siteTitle {
+  font-family: 'Indie Flower';
+  text-align: center;
+}
+
+.navigationBar {
+  display: flex;
+  justify-content: space-around;
+}

@@ -6,6 +6,8 @@ import { toGetAuth } from '../../selectors/useSelectors';
 import { usePositives } from '../../hooks/usePositives';
 import { CopyLink } from '../CopyLink';
 
+import style from '../Styles/Profile.css';
+
 export const Positives = () => {
   const history = useHistory();
 
@@ -20,7 +22,7 @@ export const Positives = () => {
   );
 
   return (
-    <section>
+    <section className={style.feature}>
       <h3>Positives{unread > 0 ? (<span> - {unread} new</span>) : (<></>)}</h3>
       {loading ? <img style={{ height: '125px', margin: '-25px 0px' }} src="https://i.pinimg.com/originals/3f/2c/97/3f2c979b214d06e9caab8ba8326864f3.gif" /> : <></>}
       <div>

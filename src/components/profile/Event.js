@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useEventForm } from '../../hooks/forms/useEventForm';
 import { useEvent } from '../../hooks/useEvent';
+import style from '../Styles/Profile.css';
 
 export const Event = () => {
   const  { event, date, showEventForm, setShowEventForm, error, loading } = useEvent();
@@ -11,7 +12,7 @@ export const Event = () => {
   }, [success]);
 
   return (
-    <section>
+    <section className={style.feature}>
       <h3>Looking Forward</h3>
       {loading ? <img style={{ height: '125px', margin: '-25px 0px' }} src="https://i.pinimg.com/originals/3f/2c/97/3f2c979b214d06e9caab8ba8326864f3.gif" /> : <></>}
       <p>You are looking forward to</p>

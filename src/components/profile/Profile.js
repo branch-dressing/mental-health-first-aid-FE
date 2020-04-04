@@ -6,8 +6,6 @@ import { Event } from './Event';
 import { Option } from './Option';
 import { Positives } from './Positives';
 import { Moods } from './Moods';
-
-import styles from './Profile.css';
 import { useHistory } from 'react-router-dom';
 
 export const Profile = () => {
