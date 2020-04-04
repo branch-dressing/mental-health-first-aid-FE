@@ -4,7 +4,7 @@ import { useEvent } from '../../hooks/useEvent';
 
 export const Event = () => {
   const  { event, date, showEventForm, setShowEventForm, error, loading } = useEvent();
-  const { title: titleInput, setTitle, date: dateInput, setDate, handleSubmit, success } = useEventForm();
+  const { title: titleInput, setTitle, date: dateInput, setDate, handleSubmit, success, getNow } = useEventForm();
 
   useEffect(() => {
     setShowEventForm(false);
@@ -21,13 +21,17 @@ export const Event = () => {
         value={titleInput} 
         onChange={({ target }) => setTitle(target.value)} />) : event.title}</p>
       <p>on {showEventForm || !event ? <input type="date" 
+        min={getNow()}
         value={dateInput} 
         onChange={({ target }) => setDate(target.value.slice(0, 10))} /> : date }</p>
       {error && showEventForm ? <p>{error.message}</p> : <></>}
 
       {showEventForm || !event ? (
         <div>
-          <button onClick={handleSubmit}>Update</button>
+          <button onClick={() => {
+            handleSubmit()
+              .then(success => setShowEventForm(!success));
+          }}>Update</button>
           <button onClick={() => setShowEventForm(!showEventForm)}>Cancel</button>
         </div>
       ) : (
