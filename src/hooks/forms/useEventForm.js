@@ -31,7 +31,7 @@ export const useEventForm = () => {
             throw new Error(res.payload.message);
           } else {
             setTitle('');
-            setDate('');
+            setDate(getNow());
             setSuccess(true);
             return true;
           }
@@ -39,5 +39,5 @@ export const useEventForm = () => {
     }
   };
 
-  return { title, setTitle, date, setDate, success, setSuccess, handleSubmit };
+  return { title, setTitle, date, setDate, success, setSuccess, handleSubmit, getNow };
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import { useEventForm } from '../../hooks/forms/useEventForm';
 
 export const EventForm = () => {
-  const { title, setTitle, date, setDate, success, handleSubmit } = useEventForm();
+  const { title, setTitle, date, setDate, success, handleSubmit, getNow } = useEventForm();
 
   return success ? (
     <p>Your Event has been created! You are looking forward to {title} on {date.slice(5)}!</p>
@@ -18,6 +18,7 @@ export const EventForm = () => {
 
         <label>Date: 
           <input type="date"
+            min={getNow()}
             value={date} 
             onChange={({ target }) => setDate(target.value)} />
         </label>
