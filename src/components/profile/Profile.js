@@ -8,6 +8,8 @@ import { Positives } from './Positives';
 import { Moods } from './Moods';
 import { useHistory } from 'react-router-dom';
 
+import style from '../Styles/Profile.css';
+
 export const Profile = () => {
   const { user: { userName, collections, avatar, friendCode, newUser } } = useSelector(toGetAuth);
   const history = useHistory();
@@ -20,10 +22,12 @@ export const Profile = () => {
 
   return (
     <main>
-      <h2>Welcome back {userName}</h2>
-      <h3>Friend Code: {friendCode}</h3>
-      <Avatar avatar={avatar} />
-      <Event />
+      <div className={style.profileHeader}>
+        <h2>Hello {userName}</h2>
+        <Avatar avatar={avatar} />
+        <h5>Friend Code: {friendCode}</h5>
+        <Event />
+      </div>
       <Moods />
       <Positives />
       {/* {renderOptions}

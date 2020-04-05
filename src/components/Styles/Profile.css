@@ -1,7 +1,35 @@
+.profileHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .feature {
   background-color: white;
-  border: solid 1px white;
+  border: solid 3px #0357b0;
   border-radius: 10px;
   margin: 10px 0px;
   padding: 0px 10px 20px 10px;
+  width: 80vw;
+}
+
+.eventDate {
+  background-color: #0356b0;
+    color: white;
+    font-size: 22px;
+    border: solid 5px #0356b0;
+    width: fit-content;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.eventTitle {
+  background-color: #0356b0;
+    color: white;
+    font-size: 22px;
+    border: solid 5px #0356b0;
+    width: fit-content;
+    border-radius: 15px;
+    padding: 5px;
 }
