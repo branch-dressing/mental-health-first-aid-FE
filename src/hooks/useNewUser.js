@@ -7,12 +7,12 @@ import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { toGetEvent, toGetPositives, toGetMoods, toGetAuth } from '../selectors/useSelectors';
 import { updateUser } from '../actions/authActions';
+import { fetchPostPositive } from '../actions/positiveActions';
 
 export const useNewUser = () => {
   const { loading: eventCreated } = useSelector(toGetEvent);
   const { loading: positiveCreated } = useSelector(toGetPositives);
   const { loading: moodCreated } = useSelector(toGetMoods);
-  const { user } = useSelector(toGetAuth);
   const [currentRender, setCurrentRender] = useState((<></>));
   const [index, setIndex] = useState(0);
   const history = useHistory();
@@ -28,7 +28,7 @@ export const useNewUser = () => {
     },
     {
       title: 'Hello!',
-      text: 'You should be able to log on and find exactly what you neeed at that moment.'
+      text: 'You should be able to log on and find exactly what you need at that moment.'
     },
     {
       title: 'Hello!',
@@ -120,7 +120,13 @@ export const useNewUser = () => {
   }, [index]);
 
   const handleNext = () => {
-    if(index === slides.length - 1) dispatch(updateUser({ newUser: false }));
+    if(index === slides.length - 1) {
+      dispatch(updateUser({ newUser: false }));
+      dispatch(fetchPostPositive({ 
+        message: 'You have invested time in your mental health.', 
+        friendCode, 
+        author: 'Mental Health First Aid Team' }));
+    }
     if(index < slides.length - 1) setIndex(index + 1);
     else history.push('./profile');
   };
