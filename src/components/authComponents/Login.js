@@ -13,6 +13,7 @@ export const Login = () => {
             value={email}
             onChange={({ target }) => setEmail(target.value)} />
         </label>
+        <br/>
         <label>Password: 
           <input 
             type="password"
@@ -22,6 +23,7 @@ export const Login = () => {
               setRetypePassword(target.value);
             }} />
         </label>
+        <br/>
         <button>Login</button>
       </form>
     </section>

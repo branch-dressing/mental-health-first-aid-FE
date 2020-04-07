@@ -6,12 +6,13 @@ import { Event } from './Event';
 import { Option } from './Option';
 import { Positives } from './Positives';
 import { Moods } from './Moods';
+import { Loading } from '../Loading';
 
 import styles from './Profile.css';
 import { useHistory } from 'react-router-dom';
 
 export const Profile = () => {
-  const { user: { userName, collections, avatar, friendCode, newUser } } = useSelector(toGetAuth);
+  const { loading, user: { userName, collections, avatar, friendCode, newUser, } } = useSelector(toGetAuth);
   const history = useHistory();
 
   if(newUser) history.push(`/newuser?friendcode=${friendCode}&username=${userName}`);
@@ -20,7 +21,8 @@ export const Profile = () => {
     return (<Option key={collection} componentName={collection} />);
   }) : (<></>);
 
-  return (
+
+  return loading ? (<Loading />) : (
     <main>
       <h2>Welcome back {userName}</h2>
       <h3>Friend Code: {friendCode}</h3>

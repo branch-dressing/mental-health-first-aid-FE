@@ -14,11 +14,10 @@ export const Header = () => {
 
   return (
     <section>
-      <h1>Mental Health First Aid Kit</h1>
+      <h1>Mental Health First Aid Kit - {logoutButton}</h1>
       <NavLink to='/profile'>Profile</NavLink>
       <br/>
       <NavLink to='/positive'>Send Positive</NavLink>
-      {logoutButton}
     </section>
   );
 };

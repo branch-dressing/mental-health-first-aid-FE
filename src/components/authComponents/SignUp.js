@@ -12,23 +12,25 @@ export const SignUp = () => {
             value={userName} 
             onChange={({ target }) => setUserName(target.value)} />
         </label>
-
+        <br/>
         <label>Email: 
           <input type="text" 
             value={email} 
             onChange={({ target }) => setEmail(target.value)} />
         </label>
-
+        <br/>
         <label>Password: 
           <input type="password" 
             value={password} 
             onChange={({ target }) => setPassword(target.value)} />
         </label>
+        <br/>
         <label>Retype Password: 
           <input type="password" 
             value={retypePassword} 
             onChange={({ target }) => setRetypePassword(target.value)} />
         </label>
+        <br/>
         <button>Sign Up</button>
       </form>
 
