@@ -1,6 +1,7 @@
 import React from 'react';
 import { MoodForm } from '../forms/MoodForm';
 import { useMood } from '../../hooks/useMood';
+import style from '../Styles/Profile.css';
 
 export const Moods = () => {
   const { allMoods, currentMood, handleEdit, handleDelete, selected, setSelected, editing, setEditing, loading } = useMood();
@@ -23,7 +24,7 @@ export const Moods = () => {
   );
 
   return (
-    <section>
+    <section className={style.feature}>
       <h3>Currently Feeling</h3>
       {loading ? <img style={{ height: '125px', margin: '-25px 0px' }} src="https://i.pinimg.com/originals/3f/2c/97/3f2c979b214d06e9caab8ba8326864f3.gif" /> : <></>}
       
