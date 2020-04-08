@@ -15,11 +15,13 @@ import { Profile } from './profile/Profile';
 import { PositiveForm } from './forms/PositiveForm';
 import { Breathing } from './Breathing';
 import { MoodForm } from './forms/MoodForm';
+import { Loading } from './Loading';
 
 export default function App() {
   return (
     <Router>
       <Header />
+      <Loading />
       <Switch>
         <Route exact path='/' component={LandingPage} />
         <Route exact path='/auth' component={AuthPage} />
