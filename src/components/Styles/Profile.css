@@ -14,61 +14,62 @@
   width: 300px;
 }
 
-.eventDate {
-  font-size: 1em;
-  display: block;
-  position: relative;
-  width: 7em;
-  height: 7em;
-  background-color: #fff;
-  border-radius: 0.6em;
-  box-shadow: 0 1px 0 #bdbdbd, 0 2px 0 #fff, 0 3px 0 #bdbdbd, 0 4px 0 #fff, 0 5px 0 #bdbdbd, 0 0 0 1px #bdbdbd;
-  overflow: hidden;
+.event {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    strong {
-      position: absolute;
-      top: 0;
-      padding: 0.4em 0;
-      color: #fff;
-      background-color: #fd9f1b;
-      border-bottom: 1px dashed #f37302;
-      box-shadow: 0 2px 0 #fd9f1b;
-    }
+  .title {
+  
+  }
 
-    em {
-      position: absolute;
-      bottom: 0.3em;
-      color: #fd9f1b;
-    }
-
-    span {
-      font-size: 2.8em;
-      letter-spacing: -0.05em;
-      padding-top: 0.8em;
-      color: #2f2f2f;
-    }
+  .eventDate {
+    font-size: 1em;
+    display: block;
+    position: relative;
+    width: 7em;
+    height: 7em;
+    background-color: #fff;
+    border-radius: 0.6em;
+    box-shadow: 0 1px 0 #bdbdbd, 0 2px 0 #fff, 0 3px 0 #bdbdbd, 0 4px 0 #fff, 0 5px 0 #bdbdbd, 0 0 0 1px #bdbdbd;
+    overflow: hidden;
+  
+      .month {
+        position: absolute;
+        top: 0;
+        padding: 0.4em 0;
+        color: #fff;
+        background-color: #fd9f1b;
+        border-bottom: 1px dashed #f37302;
+        box-shadow: 0 2px 0 #fd9f1b;
+      }
+  
+      .weekday {
+        position: absolute;
+        bottom: 0.3em;
+        color: #fd9f1b;
+      }
+  
+      
+      .day {
+        font-size: 2.8em;
+        letter-spacing: -0.05em;
+        padding-top: 0.8em;
+        color: #2f2f2f;
+      }
+  }
+  
+  .eventDate * {
+    display: block;
+    width: 100%;
+    font-size: 1em;
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+  }
 }
 
-.eventDate * {
-  display: block;
-  width: 100%;
-  font-size: 1em;
-  font-weight: bold;
-  font-style: normal;
-  text-align: center;
-}
 
-
-
-.eventTitle {
-  background-color: #0356b0;
-    color: white;
-    font-size: 22px;
-    border: solid 5px #0356b0;
-    width: fit-content;
-    border-radius: 15px;
-    padding: 5px;
-}
 
 .allFeatures {
   display: flex;

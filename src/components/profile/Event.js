@@ -13,17 +13,17 @@ export const Event = () => {
 
   const render = showEventForm || !event ? (
     <div>
-      <p>
-        <input type="date" 
-          min={getNow()}
-          value={dateInput} 
-          onChange={({ target }) => setDate(target.value.slice(0, 10))} />
-      </p>
-      <p>
+      <p>Name of Event: 
         <input required
           type="text"
           value={titleInput} 
           onChange={({ target }) => setTitle(target.value)} />
+      </p>
+      <p>Date: 
+        <input type="date" 
+          min={getNow()}
+          value={dateInput} 
+          onChange={({ target }) => setDate(target.value.slice(0, 10))} />
       </p>
       {error ? <p>{error.message}</p> : <></>}
       <div>
@@ -36,19 +36,20 @@ export const Event = () => {
     </div>
   ) : (
     <div>
-      <p className={style.eventDate}>
-        <em>{weekday}</em>
-        <strong>{month}</strong>
-        <span>{day}</span>
-      </p>
-      <p className={style.eventTitle}>{event.title}</p>
+      <div className={style.event}>
+        <h3 className={style.eventTitle}>{event.title}</h3>
+        <div className={style.eventDate}>
+          <span className={style.weekday}>{weekday}</span>
+          <span className={style.month}>{month}</span>
+          <span className={style.day}>{day}</span>
+        </div>
+      </div>
       <button onClick={() => setShowEventForm(!showEventForm)}>Edit</button>
     </div>
   );
 
   return (
-    <section className={style.feature}>
-      <h3>Looking Forward</h3>
+    <section>
       {loading ? <img style={{ height: '125px', margin: '-25px 0px' }} src="https://i.pinimg.com/originals/3f/2c/97/3f2c979b214d06e9caab8ba8326864f3.gif" /> : <></>}
       {render}
     </section>

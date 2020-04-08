@@ -24,7 +24,7 @@ export const Profile = () => {
     <main>
       <div className={style.profileHeader}>
         <h2>Hello {userName}</h2>
-        <h5>Friend Code: {friendCode}</h5>
+        <span>Friend Code: {friendCode}</span>
         <Avatar avatar={avatar} />
         <Event />
       </div>
