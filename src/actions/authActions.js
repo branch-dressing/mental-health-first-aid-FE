@@ -1,4 +1,4 @@
-import { getUpdateUser } from '../services/authServices'; 
+import { getUpdateUser, logoutUser } from '../services/authServices'; 
 
 export const SET_SESSION_LOADING = 'SET_SESSION_LOADING';
 export const SET_SESSION_DONE = 'SET_SESSION_DONE';
@@ -38,5 +38,15 @@ export const updateUser = body => dispatch => {
       return dispatch(setSessionDone());
     })
     .catch(authError => dispatch(setSessionError(authError)));
+};
+
+export const fetchLogoutUser = () => dispatch => {
+  dispatch(setSessionLoading());
+  return logoutUser()
+    .then(() => {
+      dispatch(setSession(null));
+      return dispatch(setSessionDone());
+    })
+    .catch(authError => dispatch({ type: SET_SESSION_ERROR, payload: authError }));
 };
 

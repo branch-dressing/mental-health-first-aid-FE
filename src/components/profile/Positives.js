@@ -23,7 +23,7 @@ export const Positives = () => {
 
   return (
     <section className={style.feature}>
-      <h3>Positives{unread > 0 ? (<span> - {unread} new</span>) : (<></>)}</h3>
+      <h3>{unread > 0 ? (<span className={style.newHeader}>{unread}</span>) : (<></>)} Positives</h3>
       {loading ? <img style={{ height: '125px', margin: '-25px 0px' }} src="https://i.pinimg.com/originals/3f/2c/97/3f2c979b214d06e9caab8ba8326864f3.gif" /> : <></>}
       <div>
         {!loading && render}

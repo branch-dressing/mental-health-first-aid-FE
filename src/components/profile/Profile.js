@@ -24,12 +24,14 @@ export const Profile = () => {
     <main>
       <div className={style.profileHeader}>
         <h2>Hello {userName}</h2>
-        <Avatar avatar={avatar} />
         <h5>Friend Code: {friendCode}</h5>
+        <Avatar avatar={avatar} />
         <Event />
       </div>
-      <Moods />
-      <Positives />
+      <div className={style.allFeatures}>
+        <Moods />
+        <Positives />
+      </div>
       {/* {renderOptions}
       <Option /> */}
     </main>

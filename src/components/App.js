@@ -16,7 +16,7 @@ import { PositiveForm } from './forms/PositiveForm';
 import { Breathing } from './Breathing';
 import { MoodForm } from './forms/MoodForm';
 
-import style from './Styles/App.css';
+import './Styles/App.css';
 
 export default function App() {
   return (
