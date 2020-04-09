@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import style from '../Styles/Profile.css';
 
 export const Positive = ({ message, author, seen }) => (
   <>
-    <p>{seen ? (<></>) : (<span>NEW!</span>)}&quot;{message}&quot;</p>
+    <p>{seen ? (<></>) : (<span className={style.dot}></span>)} &quot;{message}&quot;</p>
     <p>from {author}</p>
   </>
 );

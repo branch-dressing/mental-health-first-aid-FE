@@ -6,9 +6,9 @@ import { Event } from './Event';
 import { Option } from './Option';
 import { Positives } from './Positives';
 import { Moods } from './Moods';
-
-import styles from './Profile.css';
 import { useHistory } from 'react-router-dom';
+
+import style from '../Styles/Profile.css';
 
 export const Profile = () => {
   const { user: { userName, collections, avatar, friendCode, newUser } } = useSelector(toGetAuth);
@@ -22,12 +22,16 @@ export const Profile = () => {
 
   return (
     <main>
-      <h2>Welcome back {userName}</h2>
-      <h3>Friend Code: {friendCode}</h3>
-      <Avatar avatar={avatar} />
-      <Event />
-      <Moods />
-      <Positives />
+      <div className={style.profileHeader}>
+        <h2>Hello {userName}</h2>
+        <span>Friend Code: {friendCode}</span>
+        <Avatar avatar={avatar} />
+        <Event />
+      </div>
+      <div className={style.allFeatures}>
+        <Moods />
+        <Positives />
+      </div>
       {/* {renderOptions}
       <Option /> */}
     </main>
