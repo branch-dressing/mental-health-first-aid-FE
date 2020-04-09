@@ -17,6 +17,8 @@ import { Breathing } from './Breathing';
 import { MoodForm } from './forms/MoodForm';
 import { Loading } from './Loading';
 
+import './Styles/App.css';
+
 export default function App() {
   return (
     <Router>
