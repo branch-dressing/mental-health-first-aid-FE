@@ -10,7 +10,8 @@ export const SignUp = () => {
       <h3>Register</h3>
       <form onSubmit={handleSubmit}>
         <label>Name: 
-          <input type='text' 
+          <input autoFocus
+            type='text' 
             value={userName} 
             onChange={({ target }) => setUserName(target.value)} />
         </label>

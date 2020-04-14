@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { authorizeUser, SET_SESSION_ERROR } from '../actions/authActions';
+import { authorizeUser, SET_SESSION_ERROR, setSessionError } from '../actions/authActions';
 import { getSignUpUser, getLoginUser } from '../services/authServices';
 import { useHistory } from 'react-router-dom';
 
@@ -16,10 +16,12 @@ export const useAuth = (type) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const user = { email, userName, password };
+    if(!email || !userName || !password) return dispatch(setSessionError({ message: 'All fields required', status: 400 }));
 
+    const user = { email, userName, password };
+    
     if(password !== retypePassword) {
-      console.log('Passwords must match');
+      dispatch(setSessionError({ message: 'Passwords must match', status: 400 }));
     } else {
       return dispatch(authorizeUser(user, (type === 'signUp') ? getSignUpUser : getLoginUser))
         .then(res => {
