@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { SignUp } from './SignUp';
 import { Login } from './Login';
 import { useSelector } from 'react-redux';
@@ -10,7 +10,7 @@ export const AuthPage = () => {
 
   return (
     <>
-      <div>
+      <div style={{ display: 'flex', justifyContent: 'space-around', width: '600px', margin: '0 auto', alignItems: 'center' }}>
         <SignUp />
         <p>or</p>
         <Login />
