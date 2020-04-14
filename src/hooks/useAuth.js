@@ -16,7 +16,6 @@ export const useAuth = (type) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if(!email || !userName || !password) return dispatch(setSessionError({ message: 'All fields required', status: 400 }));
 
     const user = { email, userName, password };
     

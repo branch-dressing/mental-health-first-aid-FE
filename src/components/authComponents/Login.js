@@ -10,14 +10,14 @@ export const Login = () => {
       <h3>Log In</h3>
       <form onSubmit={handleSubmit}>
         <label>Email: 
-          <input 
+          <input required
             type='text'
             value={email}
             onChange={({ target }) => setEmail(target.value)} />
         </label>
         <br/>
         <label>Password: 
-          <input 
+          <input required
             type={hidePassword ? 'password' : 'text'}
             value={password}
             onChange={({ target }) => {
