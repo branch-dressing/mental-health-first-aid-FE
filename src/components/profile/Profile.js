@@ -11,7 +11,7 @@ import { useHistory } from 'react-router-dom';
 import style from '../Styles/Profile.css';
 
 export const Profile = () => {
-  const { user: { userName, collections, avatar, friendCode, newUser } } = useSelector(toGetAuth);
+  const { loading, user: { userName, collections, avatar, friendCode, newUser, } } = useSelector(toGetAuth);
   const history = useHistory();
 
   if(newUser) history.push(`/newuser?friendcode=${friendCode}&username=${userName}`);
@@ -20,7 +20,8 @@ export const Profile = () => {
     return (<Option key={collection} componentName={collection} />);
   }) : (<></>);
 
-  return (
+
+  return loading ? (<Loading />) : (
     <main>
       <div className={style.profileHeader}>
         <h2>Hello {userName}</h2>
