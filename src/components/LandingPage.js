@@ -6,7 +6,7 @@ import { useVerifyUser } from '../hooks/useVerifyUser';
 
 export const LandingPage = () => {
   const history = useHistory();
-  const { user, loading } = useSelector(toGetAuth);
+  const { user } = useSelector(toGetAuth);
 
   useVerifyUser();
 
