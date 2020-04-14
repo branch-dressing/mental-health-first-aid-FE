@@ -23,7 +23,6 @@ export default function App() {
   return (
     <Router>
       <Header />
-      <Loading />
       <Switch>
         <Route exact path='/' component={LandingPage} />
         <Route exact path='/auth' component={AuthPage} />

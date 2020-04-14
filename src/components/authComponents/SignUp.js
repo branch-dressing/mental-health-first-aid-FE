@@ -29,7 +29,7 @@ export const SignUp = () => {
         </label>
         <br/>
         <label>Retype Password: 
-          <input type='password' 
+          <input type={hidePassword ? 'password' : 'text'} 
             value={retypePassword} 
             onChange={({ target }) => setRetypePassword(target.value)} />
         </label>
