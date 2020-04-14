@@ -1,18 +1,24 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { toGetAuth } from '../selectors/useSelectors';
+import { useVerifyUser } from '../hooks/useVerifyUser';
 
 export const LandingPage = () => {
   const history = useHistory();
+  const { user } = useSelector(toGetAuth);
 
-  const handleClick = () => {
-    history.push('/auth');
-  };
+  useVerifyUser();
 
   return (
     <section>
       <h2>Welcome</h2>
       <h3>Take a Breath</h3>
-      <p>I want to <button onClick={handleClick}>SignUp/Login</button></p>
+      {user ? 
+        <button onClick={() => history.push('/profile')}>Home</button>
+        :
+        <button onClick={() => history.push('/auth')}>SignUp/Login</button>
+      }
     </section>
   );
 };
