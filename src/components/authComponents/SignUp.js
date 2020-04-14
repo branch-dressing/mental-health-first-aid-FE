@@ -2,31 +2,34 @@ import React from 'react';
 import { useAuth } from '../../hooks/useAuth';
 
 export const SignUp = () => {
-  const { userName, setUserName, email, setEmail, password, setPassword, handleSubmit, retypePassword, setRetypePassword } = useAuth('signUp');
+  const { userName, setUserName, email, setEmail, password, setPassword, handleSubmit, retypePassword, setRetypePassword, hidePassword, setHidePassword } = useAuth('signUp');
 
   return (
     <section>
+      <h2>New User</h2>
+      <h3>Register</h3>
       <form onSubmit={handleSubmit}>
-        <label>Username: 
-          <input type="text" 
+        <label>Name: 
+          <input type='text' 
             value={userName} 
             onChange={({ target }) => setUserName(target.value)} />
         </label>
         <br/>
         <label>Email: 
-          <input type="text" 
+          <input type='text' 
             value={email} 
             onChange={({ target }) => setEmail(target.value)} />
         </label>
         <br/>
         <label>Password: 
-          <input type="password" 
+          <input type={hidePassword ? 'password' : 'text'} 
             value={password} 
             onChange={({ target }) => setPassword(target.value)} />
+          <span onClick={() => setHidePassword(!hidePassword)}>👁‍🗨</span>
         </label>
         <br/>
         <label>Retype Password: 
-          <input type="password" 
+          <input type='password' 
             value={retypePassword} 
             onChange={({ target }) => setRetypePassword(target.value)} />
         </label>

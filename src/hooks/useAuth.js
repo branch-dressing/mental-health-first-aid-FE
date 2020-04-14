@@ -12,6 +12,7 @@ export const useAuth = (type) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [retypePassword, setRetypePassword] = useState('');
+  const [hidePassword, setHidePassword] = useState(true);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -31,5 +32,5 @@ export const useAuth = (type) => {
     }
   };
 
-  return { userName, setUserName, email, setEmail, password, setPassword, retypePassword, setRetypePassword, handleSubmit };
+  return { userName, setUserName, email, setEmail, password, setPassword, retypePassword, setRetypePassword, handleSubmit, hidePassword, setHidePassword };
 };

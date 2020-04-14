@@ -6,6 +6,8 @@ export const Login = () => {
 
   return (
     <section>
+      <h2>Existing User</h2>
+      <h3>Log In</h3>
       <form onSubmit={handleSubmit}>
         <label>Email: 
           <input 
