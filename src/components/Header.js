@@ -15,14 +15,9 @@ export const Header = () => {
   ) : (<></>);
 
   return (
-    <section>
+    <section className={style.header}>
       <h1 className={style.siteTitle}>Mental Health First Aid Kit</h1>
       {logoutButton}
-      <div className={style.navigationBar}>
-        <NavLink to='/profile'>Profile</NavLink>
-        <br/>
-        <NavLink to='/positive'>Send Positive</NavLink>
-      </div>
     </section>
   );
 };

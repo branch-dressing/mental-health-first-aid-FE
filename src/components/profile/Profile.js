@@ -7,6 +7,7 @@ import { Option } from './Option';
 import { Positives } from './Positives';
 import { Moods } from './Moods';
 import { useHistory } from 'react-router-dom';
+import { Loading } from '../Loading';
 
 import style from '../Styles/Profile.css';
 
@@ -23,11 +24,12 @@ export const Profile = () => {
 
   return loading ? (<Loading />) : (
     <main>
+      <h2>Hello {userName}</h2>
       <div className={style.profileHeader}>
-        <h2>Hello {userName}</h2>
-        <span>Friend Code: {friendCode}</span>
         <Avatar avatar={avatar} />
-        <Event />
+        <div>
+          <Event />
+        </div>
       </div>
       <div className={style.allFeatures}>
         <Moods />

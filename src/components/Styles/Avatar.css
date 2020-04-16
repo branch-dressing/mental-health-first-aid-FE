@@ -1,0 +1,16 @@
+.component {
+  align-self: center;
+  border-radius: 105px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img {
+  border-radius: inherit;
+  max-width: 145px;
+  max-height: 145px;
+}
