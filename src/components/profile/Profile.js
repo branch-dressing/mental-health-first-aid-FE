@@ -24,7 +24,7 @@ export const Profile = () => {
 
   return loading ? (<Loading />) : (
     <main>
-      <h2>Hello {userName}</h2>
+      <h2 className={style.welcome}>Hello {userName}</h2>
       <div className={style.profileHeader}>
         <Avatar avatar={avatar} />
         <div>

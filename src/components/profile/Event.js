@@ -40,6 +40,7 @@ export const Event = () => {
   ) : (
     <div onClick={() => setShowEventForm(!showEventForm)}>
       <div className={style.event}>
+        <h5>Looking forward to:</h5>
         <h3 className={style.title}>{event.title}</h3>
         <div className={style.eventDate}>
           <span className={style.weekday}>{weekday}</span>

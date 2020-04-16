@@ -1,6 +1,12 @@
+.welcome {
+  margin: 5px;
+  text-align: center;
+}
+
 .profileHeader {
   display: grid;
   grid-template-columns: 50% 50%;
+  margin: 0px 20px;
 }
 
 .feature {
@@ -10,6 +16,7 @@
   margin: 10px 0px;
   padding: 0px 10px 20px 10px;
   width: 300px;
+  box-shadow: 3px 3px 10px 0px black;
 }
 
 .title {
@@ -23,6 +30,10 @@
 
   p {
     margin: 5px
+  }
+
+  h5 {
+    margin: 0px 0px 2px;
   }
 
 
@@ -42,15 +53,15 @@
         top: 0;
         padding: 0.4em 0;
         color: #fff;
-        background-color: #fd9f1b;
-        border-bottom: 1px dashed #f37302;
-        box-shadow: 0 2px 0 #fd9f1b;
+        background-color: #1c5685;
+        border-bottom: 1px dashed #000000;
+        box-shadow: 0 2px 0 #000000;
       }
   
       .weekday {
         position: absolute;
         bottom: 0.3em;
-        color: #fd9f1b;
+        color: #1c5685
       }
   
       
