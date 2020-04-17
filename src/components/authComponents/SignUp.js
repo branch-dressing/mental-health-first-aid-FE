@@ -11,26 +11,30 @@ export const SignUp = () => {
       <form onSubmit={handleSubmit}>
         <label>Name: 
           <input autoFocus
+            required
             type='text' 
             value={userName} 
             onChange={({ target }) => setUserName(target.value)} />
         </label>
         <br/>
         <label>Email: 
-          <input type='text' 
+          <input required
+            type='text' 
             value={email} 
             onChange={({ target }) => setEmail(target.value)} />
         </label>
         <br/>
         <label>Password: 
-          <input type={hidePassword ? 'password' : 'text'} 
+          <input required
+            type={hidePassword ? 'password' : 'text'} 
             value={password} 
             onChange={({ target }) => setPassword(target.value)} />
           <span onClick={() => setHidePassword(!hidePassword)}>👁‍🗨</span>
         </label>
         <br/>
         <label>Retype Password: 
-          <input type={hidePassword ? 'password' : 'text'} 
+          <input required
+            type={hidePassword ? 'password' : 'text'} 
             value={retypePassword} 
             onChange={({ target }) => setRetypePassword(target.value)} />
         </label>
