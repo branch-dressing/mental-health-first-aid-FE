@@ -25,19 +25,22 @@ export const Positives = () => {
     <section className={style.feature}>
       <h3>{unread > 0 ? (<span className={style.newHeader}>{unread}</span>) : (<></>)} Positives</h3>
       {loading ? <img style={{ height: '125px', margin: '-25px 0px' }} src="https://i.pinimg.com/originals/3f/2c/97/3f2c979b214d06e9caab8ba8326864f3.gif" /> : <></>}
-      <div>
-        {!loading && render}
-        <button onClick={handleGetNext}>Get Another</button>
-        <button onClick={() => history.push(`/positive?friendcode=${friendCode}`)}>Create New</button>
-        <button onClick={handleDelete}>Delete</button>
-      </div>
       {link || allPositives < 1 ? (
         <div>
           <p>Click &quot;Create New&quot;, or share this link:</p>
           <CopyLink link={`https://mental-health-dev.netlify.com/positive?friendcode=${friendCode}`} />
           <button onClick={() => setLink(!link)}>Okay</button>
         </div>
-      ) : (<></>)}
+      ) : (
+        <div>
+          {!loading && render}
+          <button onClick={handleGetNext}>Get Another</button>
+          <button onClick={() => history.push(`/positive?friendcode=${friendCode}`)}>Create New</button>
+          <button onClick={handleDelete}>Delete</button>
+          <button onClick={() => setLink(!link)}>Link</button>
+        </div>
+      )}
+
     </section>
   );
 };
