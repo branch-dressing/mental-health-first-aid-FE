@@ -30,7 +30,7 @@ export const MoodForm = ({ importId, importMoodName, importSolutions }) => {
     <section>
       <div>
         <label>When I feel
-          <input required
+          <input autoFocus required
             type="text"
             value={moodName}
             onChange={({ target }) => setMoodName(target.value)} />
