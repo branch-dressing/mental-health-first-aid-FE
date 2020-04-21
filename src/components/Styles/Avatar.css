@@ -10,7 +10,8 @@
 }
 
 .img {
+  border: solid 5px white;
   border-radius: inherit;
-  max-width: 145px;
-  max-height: 145px;
+  max-width: 140px;
+  max-height: 140px;
 }

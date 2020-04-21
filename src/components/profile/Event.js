@@ -14,7 +14,7 @@ export const Event = () => {
 
   const render = showEventForm || !event ? (
     <div className={style.event}>
-      <h3 className={style.title}>Update Event</h3>
+      <h5>Update Event</h5>
       <p>Title: <br/>
         <input required
           type='text'

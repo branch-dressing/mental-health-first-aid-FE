@@ -4,6 +4,7 @@
 .siteTitle {
   font-family: 'Indie Flower';
   text-align: center;
+  cursor: pointer;
 }
 
 .navigationBar {

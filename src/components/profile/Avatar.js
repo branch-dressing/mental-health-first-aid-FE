@@ -10,6 +10,7 @@ export const Avatar = ({ avatar }) => {
   const renderForm = (
     <div className={style.form}>
       <input
+        placeholder='Image URL'
         type='text'
         value={url}
         onChange={({ target }) => setUrl(target.value)} />

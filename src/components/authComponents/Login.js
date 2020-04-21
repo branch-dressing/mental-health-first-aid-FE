@@ -7,26 +7,20 @@ export const Login = () => {
   return (
     <section>
       <h2>Existing User</h2>
-      <h3>Log In</h3>
       <form onSubmit={handleSubmit}>
-        <label>Email: 
-          <input required
-            type='text'
-            value={email}
-            onChange={({ target }) => setEmail(target.value)} />
-        </label>
-        <br/>
-        <label>Password: 
-          <input required
-            type={hidePassword ? 'password' : 'text'}
-            value={password}
-            onChange={({ target }) => {
-              setPassword(target.value);
-              setRetypePassword(target.value);
-            }} />
-          <span onClick={() => setHidePassword(!hidePassword)}>👁‍🗨</span>
-        </label>
-        <br/>
+        <label>Email:</label>
+        <input required
+          type='text'
+          value={email}
+          onChange={({ target }) => setEmail(target.value)} />
+        <label>Password: <span onClick={() => setHidePassword(!hidePassword)}>👁‍🗨</span></label>
+        <input required
+          type={hidePassword ? 'password' : 'text'}
+          value={password}
+          onChange={({ target }) => {
+            setPassword(target.value);
+            setRetypePassword(target.value);
+          }} />
         <button>Login</button>
       </form>
     </section>

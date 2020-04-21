@@ -8,7 +8,12 @@ import style from '../Styles/AuthPage.css';
 
 export const AuthPage = () => {
   const { error } = useSelector(toGetAuth);
-  const errorMessage = error ? (<p>{error.message}</p>) : (<></>);
+  const rednerError = error ? (
+    <div className={style.error}>
+      <hr />
+      <p>{error.message}</p>
+    </div>
+  ) : (<></>);
 
   return (
     <section className={style.authPage}>
@@ -21,9 +26,7 @@ export const AuthPage = () => {
         </div>
         <Login />
       </div>
-      <div className={style.error}>
-        {errorMessage}
-      </div>
+      {rednerError}
     </section> 
   );
 };
