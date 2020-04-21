@@ -1,14 +1,12 @@
 .authPage {
   border: solid 1px grey;
   padding: 5px;
-  width: 600px;
   margin: 0 auto;
 }
 
 .forms {
   display: flex;
   justify-content: space-around;
-  width: 600px;
   align-items: center;
 }
 
@@ -24,11 +22,34 @@
   padding: 10px;
 }
 
-.vl {
-  border-left: 1px solid grey;
-  height: 50px 
-}
-
 .error {
   background-color: white;
+}
+
+@media (min-width: 700px) {
+  .vl {
+    border-left: 1px solid grey;
+    height: 50px 
+  }
+}
+
+@media (max-width: 700px) {
+  .authPage {
+    max-width: 600px;
+  }
+
+  .forms {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .seperator {
+    flex-direction: row;
+  }
+  
+  .vl {
+    border-bottom: 1px solid grey;
+    width: 30vw 
+  }
+
 }
