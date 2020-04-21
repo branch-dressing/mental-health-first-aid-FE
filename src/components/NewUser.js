@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux';
 import { toGetAuth } from '../selectors/useSelectors';
 import { useHistory } from 'react-router-dom';
 
+import style from './Styles/NewUser.css';
+
 export const NewUser = () => {
   const history = useHistory();
   const { user: { newUser } } = useSelector(toGetAuth);
@@ -11,11 +13,15 @@ export const NewUser = () => {
 
   if(newUser) {
     return (
-      <section>
-        <progress value={index} max={slides.length} />
-        {currentRender}
-        <button onClick={handleBack}>Back</button>
-        <button disabled={!!slides[index].conditions} onClick={handleNext}>Next</button>
+      <section className={style.section}>
+        <div className={style.slides}>
+          <progress value={index} max={slides.length} />
+          {currentRender}
+        </div>
+        <div className={style.buttons}>
+          <button onClick={handleBack}>Back</button>
+          <button disabled={!!slides[index].conditions} onClick={handleNext}>Next</button>
+        </div>
       </section>
     );
   } else {

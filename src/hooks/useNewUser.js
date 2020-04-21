@@ -21,14 +21,16 @@ export const useNewUser = () => {
   const friendCode = new URLSearchParams(location.search).get('friendcode');
 
   const slides = [
-    { title: 'Hello!' },
+    { title: 'Hello!', img: 'https://media1.giphy.com/media/pTh2K2xTJ1nag/giphy.gif' },
     {
       title: 'Hello!',
-      text: 'The goal of this app is to give you the tools to be in control of your mental health.'
+      text: 'The goal of this app is to give you the tools to be in control of your mental health.',
+      img: 'https://media1.giphy.com/media/pTh2K2xTJ1nag/giphy.gif'
     },
     {
       title: 'Hello!',
-      text: 'You should be able to log on and find exactly what you need at that moment.'
+      text: 'You should be able to log on and find exactly what you need at that moment.',
+      img: 'https://media1.giphy.com/media/pTh2K2xTJ1nag/giphy.gif'
     },
     {
       title: 'Hello!',
@@ -116,6 +118,7 @@ export const useNewUser = () => {
         {(<></>) && <h2>{slides[index].title}</h2>}
         {(<></>) && <p>{slides[index].text}</p>}
         {(<></>) && slides[index].component}
+        {(<></>) && <img src={slides[index].img} /> }
       </div>);
   }, [index]);
 
