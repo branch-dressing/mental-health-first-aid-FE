@@ -16,9 +16,7 @@ export const usePositiveForm = () => {
   const [author, setAuthor] = useState(usernameFromURL ? usernameFromURL : '');
   const [success, setSuccess] = useState(false);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
+  const handleSubmit = () => {
     return dispatch(fetchPostPositive({ message, friendCode, author }))
       .then(res => {
         if(res.type === SET_POSITIVE_ERROR) {

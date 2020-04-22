@@ -20,7 +20,7 @@ export const NewUser = () => {
         </div>
         <div className={style.buttons}>
           <button onClick={handleBack}>Back</button>
-          <button disabled={!!slides[index].conditions} onClick={handleNext}>Next</button>
+          <button disabled={!slides[index].conditionsMet} onClick={handleNext}>Next</button>
         </div>
       </section>
     );

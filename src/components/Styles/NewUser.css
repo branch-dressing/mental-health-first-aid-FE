@@ -40,6 +40,30 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+  
+    .moodForm {
+      height: 300px;
+      overflow-x: hidden;
+      width: 200px;
+
+      ul{
+        margin: 2px 5px 15px;
+        padding: 0px;
+        list-style-type: none;
+
+        input {
+          margin-bottom: 2px;
+        }
+      }
+    }
+
+    textarea {
+      width: 200px;
+      height: 65px;
+      margin: 5px;
+      resize: none;
+      border: solid 1px darkblue;
+    }
 
     section {
       div {

@@ -1,7 +1,5 @@
 import React from 'react';
 import { useEventForm } from '../../hooks/forms/useEventForm';
-import { useSelector } from 'react-redux';
-import { toGetEvent } from '../../selectors/useSelectors';
 import { Event } from '../profile/Event';
 
 export const EventForm = () => {

@@ -11,28 +11,27 @@ export const PositiveForm = () => {
     </section>
   ) : (
     <section>
-      <form onSubmit={handleSubmit}>
-        <label>Message: 
-          <textarea required
-            type="text"
-            value={message} 
-            onChange={({ target }) => setMessage(target.value)} />
-        </label>
+      <div>
+        <label>Message:</label>
+        <textarea required
+          type="text"
+          value={message} 
+          onChange={({ target }) => setMessage(target.value)} />
+        
 
-        {!friendCodeFromURL ? (<label>Friend Code: 
+        {!friendCodeFromURL ? (<><label>Friend Code:</label>
           <input type="text" required
             value={friendCode} 
-            onChange={({ target }) => setFriendCode(target.value)} />
-        </label>) : (<></>)}
+            onChange={({ target }) => setFriendCode(target.value)} /></>) : (<></>)}
 
-        {!usernameFromURL ? (<label>Author: 
+        {!usernameFromURL ? (<><label>Author:</label>
           <input type="text" 
             value={author} 
-            onChange={({ target }) => setAuthor(target.value)} />
-        </label>) : (<></>)}
+            onChange={({ target }) => setAuthor(target.value)} /></>
+        ) : (<></>)}
 
-        <button>Send</button>
-      </form>
+        <button onClick={handleSubmit}>Send</button>
+      </div>
     </section>
   );
 };
