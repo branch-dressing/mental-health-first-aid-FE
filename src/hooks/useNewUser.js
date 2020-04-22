@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toGetEvent, toGetPositives, toGetMoods, toGetAuth } from '../selectors/useSelectors';
 import { updateUser } from '../actions/authActions';
 import { fetchPostPositive } from '../actions/positiveActions';
+import style from '../components/Styles/NewUser.css';
 
 export const useNewUser = () => {
   const { loading: eventCreated } = useSelector(toGetEvent);
@@ -114,12 +115,12 @@ export const useNewUser = () => {
   
   useEffect(() => {
     setCurrentRender(
-      <div>
+      <main className={style.currentRender}>
         {(<></>) && <h2>{slides[index].title}</h2>}
         {(<></>) && <p>{slides[index].text}</p>}
         {(<></>) && slides[index].component}
         {(<></>) && <img src={slides[index].img} /> }
-      </div>);
+      </main>);
   }, [index]);
 
   const handleNext = () => {
