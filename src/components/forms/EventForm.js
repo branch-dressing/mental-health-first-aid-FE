@@ -1,27 +1,29 @@
 import React from 'react';
 import { useEventForm } from '../../hooks/forms/useEventForm';
+import { Event } from '../profile/Event';
 
 export const EventForm = () => {
   const { title, setTitle, date, setDate, success, handleSubmit, getNow } = useEventForm();
 
   return success ? (
-    <p>Your Event has been created! You are looking forward to {title} on {date.slice(5)}!</p>
+    <div>
+      <p>Success!</p>
+      <Event />
+    </div>
   ) : (
     <section>
       <div>
-        <label>Title: 
-          <input required
-            type="text"
-            value={title} 
-            onChange={({ target }) => setTitle(target.value)} />
-        </label>
+        <label>Title:</label>
+        <input required
+          type="text"
+          value={title} 
+          onChange={({ target }) => setTitle(target.value)} />
 
-        <label>Date: 
-          <input type="date"
-            min={getNow()}
-            value={date} 
-            onChange={({ target }) => setDate(target.value)} />
-        </label>
+        <label>Date:</label>
+        <input type="date"
+          min={getNow()}
+          value={date} 
+          onChange={({ target }) => setDate(target.value)} />
 
         <button onClick={handleSubmit}>Set Event</button>
       </div>

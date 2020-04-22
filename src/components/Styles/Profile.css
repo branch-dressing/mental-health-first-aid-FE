@@ -1,8 +1,14 @@
+.welcome {
+  margin: 5px;
+  text-align: center;
+}
+
 .profileHeader {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin: 0 auto;
+  width: 300px;
+  height: 150px;
 }
 
 .feature {
@@ -12,23 +18,33 @@
   margin: 10px 0px;
   padding: 0px 10px 20px 10px;
   width: 300px;
+  box-shadow: 3px 3px 10px 0px black;
 }
 
+.title {
+  text-align: center;
+  margin: 0px;
+}
 .event {
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  .title {
-  
+  p {
+    margin: 5px
   }
+
+  h5 {
+    margin: 0px 0px 2px;
+  }
+
 
   .eventDate {
     font-size: 1em;
     display: block;
     position: relative;
-    width: 7em;
-    height: 7em;
+    width: 6em;
+    height: 6em;
     background-color: #fff;
     border-radius: 0.6em;
     box-shadow: 0 1px 0 #bdbdbd, 0 2px 0 #fff, 0 3px 0 #bdbdbd, 0 4px 0 #fff, 0 5px 0 #bdbdbd, 0 0 0 1px #bdbdbd;
@@ -39,22 +55,22 @@
         top: 0;
         padding: 0.4em 0;
         color: #fff;
-        background-color: #fd9f1b;
-        border-bottom: 1px dashed #f37302;
-        box-shadow: 0 2px 0 #fd9f1b;
+        background-color: #1c5685;
+        border-bottom: 1px dashed #000000;
+        box-shadow: 0 2px 0 #000000;
       }
   
       .weekday {
         position: absolute;
         bottom: 0.3em;
-        color: #fd9f1b;
+        color: #1c5685
       }
   
       
       .day {
-        font-size: 2.8em;
+        font-size: 2.4em;
         letter-spacing: -0.05em;
-        padding-top: 0.8em;
+        padding-top: 0.9em;
         color: #2f2f2f;
       }
   }
@@ -67,6 +83,20 @@
     font-style: normal;
     text-align: center;
   }
+}
+
+.moods {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+    ul{
+      margin: 2px 5px 15px;
+
+      li {
+        margin-bottom: 2px;
+      }
+    }
 }
 
 

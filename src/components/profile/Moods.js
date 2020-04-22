@@ -6,11 +6,13 @@ import style from '../Styles/Profile.css';
 export const Moods = () => {
   const { allMoods, currentMood, handleEdit, handleDelete, selected, setSelected, editing, setEditing, loading } = useMood();
 
-  const moodNameOptions = allMoods.map(({ moodName, _id }) => (<option key={_id} value={_id}>{moodName}</option>));
+  const sortedMoodOptions = allMoods
+    .sort((a, b) => a.moodName.toUpperCase() > b.moodName.toUpperCase() ? 1 : -1)
+    .map(({ moodName, _id }) => (<option key={_id} value={_id}>{moodName}</option>)); 
 
   const solutionsList = currentMood ? (
-    <div>
-      <h4>You might try to:</h4>
+    <div className={style.moods}>
+      <h4>You might try:</h4>
       <ul>
         {currentMood.solutions.map(solution => (
           <li key={solution}>{solution}</li>
@@ -35,7 +37,7 @@ export const Moods = () => {
           setSelected(target.value);
         }}>
         <option value="defualt">Select a Mood</option>
-        {moodNameOptions}
+        {sortedMoodOptions}
         <option value="add">Add +</option>
       </select>
       {editing ? (

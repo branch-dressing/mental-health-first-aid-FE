@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useMoodForm } from '../../hooks/forms/useMoodForm';
 import { Solution } from '../Solution';
+import style from '../Styles/NewUser.css';
 
 export const MoodForm = ({ importId, importMoodName, importSolutions }) => {
   const { success, 
@@ -28,15 +29,13 @@ export const MoodForm = ({ importId, importMoodName, importSolutions }) => {
     </section>
   ) : (
     <section>
-      <div>
-        <label>When I feel
-          <input required
-            type="text"
-            value={moodName}
-            onChange={({ target }) => setMoodName(target.value)} />
-        </label>
-        <br/>
-        <p>What helps me is:</p>
+      <div className={style.moodForm}>
+        <label>When I feel</label>
+        <input autoFocus required
+          type="text"
+          value={moodName}
+          onChange={({ target }) => setMoodName(target.value)} />
+        <label>What helps me is:</label>
         <ul onKeyPress={(event) => handleKeyPress(event)}>
           {renderSolutions}
           <li><button onClick={handleAdd}>Add</button></li>

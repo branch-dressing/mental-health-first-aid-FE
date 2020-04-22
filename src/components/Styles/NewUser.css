@@ -1,0 +1,103 @@
+.section {
+  border: solid 5px darkblue;
+  border-radius: 10px;
+  background-color: white;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 5px 5px 10px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h2 {
+    text-align: center;
+    font-size: xx-large;
+  }
+
+  p {
+    text-align: center;
+    margin: 10px 20px;
+    font-size: large;
+  }
+
+  img {
+    width: 150px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+  }
+}
+
+.slides {
+  .currentRender {
+    height: 430px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  
+    .moodForm {
+      height: 300px;
+      overflow-x: hidden;
+      width: 200px;
+
+      ul{
+        margin: 2px 5px 15px;
+        padding: 0px;
+        list-style-type: none;
+
+        input {
+          margin-bottom: 2px;
+        }
+      }
+    }
+
+    textarea {
+      width: 200px;
+      height: 65px;
+      margin: 5px;
+      resize: none;
+      border: solid 1px darkblue;
+    }
+
+    section {
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        input {
+          margin-bottom: 10px;
+          border: solid 1px darkblue;
+        }
+      }
+    }
+  }
+}
+
+.moodForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  input {
+    margin-bottom: 10px;
+    border: solid 1px darkblue;
+  }
+
+    ul{
+      margin: 2px 5px 15px;
+      padding: 0px;
+      list-style-type: none;
+
+      input {
+        margin-bottom: 2px;
+        
+      }
+    }
+}

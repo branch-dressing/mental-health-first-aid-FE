@@ -12,12 +12,10 @@ export const Solution = ({ intialSolution, solutions, setSolutions, index }) => 
   };
 
   return (
-    <label>
-      <input
-        type="text"
-        value={solution}
-        onChange={({ target }) => handleChange(target.value)} />
-    </label>
+    <input autoFocus={ index !== 0 }
+      type="text"
+      value={solution}
+      onChange={({ target }) => handleChange(target.value)} />
   );
 };
 

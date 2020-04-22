@@ -11,11 +11,13 @@ export const CopyLink = ({ link }) => {
   };
 
   return (
-    <label>
-      {copied ? 'Copied to clipboard: ' : 'Click to copy: '}
-      <input readOnly onClick={handleClick}
+    <div>
+      <label>{copied ? 'Copied: ' : 'Click to copy: '}</label>
+      <input 
+        readOnly 
+        onClick={handleClick}
         value={link} />
-    </label>
+    </div>
   );
 };
 

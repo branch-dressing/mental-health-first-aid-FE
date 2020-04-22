@@ -5,12 +5,13 @@ import { PositiveForm } from '../components/forms/PositiveForm';
 import { CopyLink } from '../components/CopyLink';
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { toGetEvent, toGetPositives, toGetMoods, toGetAuth } from '../selectors/useSelectors';
+import { toGetEvent, toGetPositives, toGetMoods } from '../selectors/useSelectors';
 import { updateUser } from '../actions/authActions';
 import { fetchPostPositive } from '../actions/positiveActions';
+import style from '../components/Styles/NewUser.css';
 
 export const useNewUser = () => {
-  const { loading: eventCreated } = useSelector(toGetEvent);
+  const { event: eventCreated } = useSelector(toGetEvent);
   const { loading: positiveCreated } = useSelector(toGetPositives);
   const { loading: moodCreated } = useSelector(toGetMoods);
   const [currentRender, setCurrentRender] = useState((<></>));
@@ -21,102 +22,121 @@ export const useNewUser = () => {
   const friendCode = new URLSearchParams(location.search).get('friendcode');
 
   const slides = [
-    { title: 'Hello!' },
+    { title: 'Hello!', img: 'https://media1.giphy.com/media/pTh2K2xTJ1nag/giphy.gif', conditionsMet: true },
     {
       title: 'Hello!',
-      text: 'The goal of this app is to give you the tools to be in control of your mental health.'
+      text: 'The goal of this app is to give you the tools to be in control of your mental health.',
+      img: 'https://media1.giphy.com/media/pTh2K2xTJ1nag/giphy.gif',
+      conditionsMet: true
     },
     {
       title: 'Hello!',
-      text: 'You should be able to log on and find exactly what you need at that moment.'
+      text: 'You should be able to log on and find exactly what you need at that moment.',
+      img: 'https://media1.giphy.com/media/pTh2K2xTJ1nag/giphy.gif',
+      conditionsMet: true
     },
     {
       title: 'Hello!',
-      text: 'Your kit is currently empty.'
+      text: 'Your kit is currently empty.',
+      conditionsMet: true
     },
     {
       title: 'Hello!',
-      text: 'Let’s start filling it!'
+      text: 'Let’s start filling it!',
+      conditionsMet: true
     },
-    { title: 'Looking Forward' },
+    { title: 'Looking Forward', conditionsMet: true },
     {
       title: 'Looking Forward',
-      text: 'Feelings won’t last forever, they come and go in waves.'
+      text: 'Feelings won’t last forever, they come and go in waves.',
+      conditionsMet: true
     },
     {
       title: 'Looking Forward',
-      text: 'One way to remind yourself that this too shall pass is to give yourself something that you are looking forward to, that you can be excited about right now.'
+      text: 'One way to remind yourself that this too shall pass is to give yourself something that you are looking forward to, that you can be excited about right now.',
+      conditionsMet: true
     },
     {
       title: 'Looking Forward',
       text: 'What is one thing you are looking forward to?',
       component: (<EventForm key={0} />),
-      conditions: eventCreated
+      conditionsMet: eventCreated
     },
     {
       title: 'Looking Forward',
-      text: 'You can update this anytime, whether the event has happened or not.'
+      text: 'You can update this anytime, whether the event has happened or not.',
+      conditionsMet: true
     },
-    { title: 'Feelings' },
+    { title: 'Feelings', conditionsMet: true },
     {
       title: 'Feelings',
-      text: 'Sometimes strong feelings come on and it’s hard to think clearly about what you might want to do in response.'
+      text: 'Sometimes strong feelings come on and it’s hard to think clearly about what you might want to do in response.',
+      conditionsMet: true
     },
     {
       title: 'Feelings',
-      text: 'We can’t always get rid of the feeling, but we can find ways to sit with it or get through it.'
+      text: 'We can’t always get rid of the feeling, but we can find ways to sit with it or get through it.',
+      conditionsMet: true
     },
     {
       title: 'Feelings',
       text: 'What is a feeling you\'ve struggled with, and what are some things you might do or have done in response?',
       component: (<MoodForm key={1} />),
-      conditions: moodCreated
+      conditionsMet: !moodCreated
     },
     {
       title: 'Feelings',
-      text: 'As you discover what works and what doesn’t, you can update your lists.'
+      text: 'As you discover what works and what doesn’t, you can update your lists.',
+      conditionsMet: true
     },
     {
       title: 'Feelings',
-      text: 'And you can add as many “Feelings” as you like.'
+      text: 'And you can add as many “Feelings” as you like.',
+      conditionsMet: true
     },
-    { title: 'Positives' },
+    { title: 'Positives', conditionsMet: true },
     {
       title: 'Positives',
-      text: 'There are so many wonderful things about you!'
+      text: 'There are so many wonderful things about you!',
+      conditionsMet: true
     },
     {
       title: 'Positives',
-      text: 'Take a moment to send a message to your future self with something you like/admire/value about who you are.'
+      text: 'Take a moment to send a message to your future self with something you like/admire/value about who you are.',
+      conditionsMet: true
     },
     {
       title: 'Positives',
       text: 'What is something you like about your self?',
       component: <PositiveForm key={2} />,
-      conditions: positiveCreated
+      conditionsMet: !positiveCreated
     },
     {
       title: 'Positives',
-      text: 'You can continue to add more and more positive messages to yourself.'
+      text: 'You can continue to add more and more positive messages to yourself.',
+      conditionsMet: true
     },
     {
       title: 'Positives',
       text: 'Or you can send the link below to the people who lift you up, and they can send you a positive message. (They don’t need an account).',
-      component: <CopyLink key={4} link={`https://mental-health-dev.netlify.com/positive?friendcode=${friendCode}`} />
+      component: <CopyLink key={4} link={`https://mental-health-dev.netlify.com/positive?friendcode=${friendCode}`} />,
+      conditionsMet: true
     },
     {
       title: 'Congrats!',
       text: 'You now have a mental health first aid kit!',
+      conditionsMet: true
     }
   ];
   
   useEffect(() => {
     setCurrentRender(
-      <div>
+      <main className={style.currentRender}>
         {(<></>) && <h2>{slides[index].title}</h2>}
         {(<></>) && <p>{slides[index].text}</p>}
         {(<></>) && slides[index].component}
-      </div>);
+        {(<></>) && <img src={slides[index].img} /> }
+      </main>);
   }, [index]);
 
   const handleNext = () => {
