@@ -5,4 +5,6 @@
 body {
   font-family: 'Quattrocento';
   background-color: rgb(69, 178, 225);
+  max-width: 600px;
+  margin: 0 auto;
 }
