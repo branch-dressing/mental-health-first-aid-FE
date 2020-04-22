@@ -11,8 +11,8 @@ export const Moods = () => {
     .map(({ moodName, _id }) => (<option key={_id} value={_id}>{moodName}</option>)); 
 
   const solutionsList = currentMood ? (
-    <div>
-      <h4>You might try to:</h4>
+    <div className={style.moods}>
+      <h4>You might try:</h4>
       <ul>
         {currentMood.solutions.map(solution => (
           <li key={solution}>{solution}</li>

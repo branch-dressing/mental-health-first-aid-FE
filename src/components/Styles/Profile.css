@@ -85,6 +85,20 @@
   }
 }
 
+.moods {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+    ul{
+      margin: 2px 5px 15px;
+
+      li {
+        margin-bottom: 2px;
+      }
+    }
+}
+
 
 
 .allFeatures {
