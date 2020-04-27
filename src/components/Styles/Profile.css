@@ -123,6 +123,17 @@
   align-items: center;
 }
 
+@media (min-width: 620px) {
+  .allFeatures {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+  }
+  .allFeatures > * {
+    margin-left: 5px;
+  }
+}
+
 .newHeader {
   color: white;
     background-color: crimson;
