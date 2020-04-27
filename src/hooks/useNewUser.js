@@ -22,17 +22,17 @@ export const useNewUser = () => {
   const friendCode = new URLSearchParams(location.search).get('friendcode');
 
   const slides = [
-    { title: 'Hello!', img: 'https://media1.giphy.com/media/pTh2K2xTJ1nag/giphy.gif', conditionsMet: true },
+    { title: 'Hello!', conditionsMet: true },
     {
       title: 'Hello!',
       text: 'The goal of this app is to give you the tools to be in control of your mental health.',
-      img: 'https://media1.giphy.com/media/pTh2K2xTJ1nag/giphy.gif',
+    
       conditionsMet: true
     },
     {
       title: 'Hello!',
       text: 'You should be able to log on and find exactly what you need at that moment.',
-      img: 'https://media1.giphy.com/media/pTh2K2xTJ1nag/giphy.gif',
+    
       conditionsMet: true
     },
     {
