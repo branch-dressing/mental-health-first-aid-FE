@@ -1,4 +1,4 @@
-import { SET_ALL_POSITIVES, SET_POSITIVE_ERROR, SET_POSITIVE_LOADING, SET_POSITIVE_DONE, SET_CURRENT_POSITIVE, SET_UNREAD_COUNT } from '../actions/positiveActions';
+import { SET_ALL_POSITIVES, SET_POSITIVE_ERROR, SET_POSITIVE_LOADING, SET_POSITIVE_DONE, SET_CURRENT_POSITIVE, SET_UNREAD_COUNT, SET_POSITIVE_LOGOUT } from '../actions/positiveActions';
 
 const initialState = {
   currentPositive: null,
@@ -19,6 +19,13 @@ export const positiveReducer = (state = initialState, action) => {
     case SET_POSITIVE_LOADING: return { ...state, loading: true, error: null };
     case SET_POSITIVE_DONE: return { ...state, loading: false };
     case SET_POSITIVE_ERROR: return { ...state, loading: false, error: action. payload };
+    case SET_POSITIVE_LOGOUT: 
+      return { 
+        currentPositive: null,
+        allPositives: null,
+        unread: 0,
+        loading: true,
+        error: null };
     default: return state;
   }
 };

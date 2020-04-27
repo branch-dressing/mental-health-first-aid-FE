@@ -6,10 +6,13 @@ export const SET_ALL_POSITIVES = 'SET_ALL_POSITIVES';
 export const SET_CURRENT_POSITIVE = 'SET_CURRENT_POSITIVE';
 export const SET_POSITIVE_ERROR = 'SET_POSITIVE_ERROR';
 export const SET_UNREAD_COUNT = 'SET_UNREAD_COUNT';
+export const SET_POSITIVE_LOGOUT = 'SET_POSITIVE_LOGOUT';
 
 export const setPositiveLoading = () => ({ type: SET_POSITIVE_LOADING });
 
 export const setPositiveDone = () => ({ type: SET_POSITIVE_DONE });
+
+export const setPositiveLogout = () => ({ type: SET_POSITIVE_LOGOUT });
 
 export const setAllPositives = positives => ({ 
   type: SET_ALL_POSITIVES,
