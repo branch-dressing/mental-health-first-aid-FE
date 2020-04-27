@@ -4,6 +4,7 @@ import { fetchLogoutUser } from '../actions/authActions';
 
 export const useLogout = () => {
   const dispatch = useDispatch();
+  
   const handleLogout = () => {
     const cookies = document.cookie.split(';');
     cookies.forEach(cookie => {

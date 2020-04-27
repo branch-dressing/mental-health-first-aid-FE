@@ -19,13 +19,7 @@ export const positiveReducer = (state = initialState, action) => {
     case SET_POSITIVE_LOADING: return { ...state, loading: true, error: null };
     case SET_POSITIVE_DONE: return { ...state, loading: false };
     case SET_POSITIVE_ERROR: return { ...state, loading: false, error: action. payload };
-    case SET_POSITIVE_LOGOUT: 
-      return { 
-        currentPositive: null,
-        allPositives: null,
-        unread: 0,
-        loading: true,
-        error: null };
+    case SET_POSITIVE_LOGOUT: return initialState;
     default: return state;
   }
 };

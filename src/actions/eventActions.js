@@ -4,10 +4,13 @@ export const SET_EVENT_LOADING = 'SET_EVENT_LOADING';
 export const SET_EVENT_DONE = 'SET_EVENT_DONE';
 export const SET_EVENT = 'SET_EVENT';
 export const SET_EVENT_ERROR = 'SET_EVENT_ERROR';
+export const SET_EVENT_LOGOUT = 'SET_EVENT_LOGOUT';
 
 export const setEventLoading = () => ({ type: SET_EVENT_LOADING });
 
 export const setEventDone = () => ({ type: SET_EVENT_DONE });
+
+export const setEventLogout = () => ({ type: SET_EVENT_LOGOUT });
 
 export const setEvent = event => ({ 
   type: SET_EVENT,

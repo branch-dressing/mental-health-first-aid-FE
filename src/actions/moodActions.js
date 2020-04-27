@@ -6,10 +6,13 @@ export const SET_ALL_MOODS = 'SET_ALL_MOODS';
 export const SET_CURRENT_MOOD = 'SET_CURRENT_MOOD';
 export const SET_MOOD_ERROR = 'SET_MOOD_ERROR';
 export const SET_MOOD_UPDATED = 'SET_MOOD_UPDATED';
+export const SET_MOOD_LOGOUT = 'SET_MOOD_LOGOUT';
 
 export const setMoodLoading = () => ({ type: SET_MOOD_LOADING });
 
 export const setMoodDone = () => ({ type: SET_MOOD_DONE });
+
+export const setMoodLogout = () => ({ type: SET_MOOD_LOGOUT});
 
 export const moodsNeedToBeUpdate = (boolean) => ({ 
   type: SET_MOOD_UPDATED, 
