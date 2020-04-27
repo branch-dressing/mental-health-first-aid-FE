@@ -11,6 +11,12 @@ export const Event = () => {
     setShowEventForm(false);
   }, [success]);
 
+  useEffect(() => {
+    if(event && getNow() + 'T12:00:000Z' > event.date) {
+      setShowEventForm(true);
+    }
+  }, [event]);
+
 
   const render = showEventForm || !event ? (
     <div className={style.event}>
