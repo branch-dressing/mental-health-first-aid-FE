@@ -12,7 +12,7 @@ export const Event = () => {
   }, [success]);
 
   useEffect(() => {
-    if(event && getNow() + 'T12:00:000Z' > event.date) {
+    if(event && getNow() > event.date) {
       setShowEventForm(true);
     }
   }, [event]);
