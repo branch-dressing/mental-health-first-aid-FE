@@ -1,4 +1,7 @@
 import { getUpdateUser, logoutUser } from '../services/authServices'; 
+import { setPositiveLogout } from './positiveActions';
+import { setMoodLogout } from './moodActions';
+import { setEventLogout } from './eventActions';
 
 export const SET_SESSION_LOADING = 'SET_SESSION_LOADING';
 export const SET_SESSION_DONE = 'SET_SESSION_DONE';
@@ -42,6 +45,9 @@ export const fetchLogoutUser = () => dispatch => {
   return logoutUser()
     .then(() => {
       dispatch(setSession(null));
+      dispatch(setPositiveLogout());
+      dispatch(setMoodLogout());
+      dispatch(setEventLogout());
       return dispatch(setSessionDone());
     })
     .catch(authError => dispatch({ type: SET_SESSION_ERROR, payload: authError }));

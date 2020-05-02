@@ -23,7 +23,7 @@ export const Profile = () => {
 
 
   return loading ? (<Loading />) : (
-    <main>
+    <section className={style.profile}>
       <h2 className={style.welcome}>Hello {userName}</h2>
       <div className={style.profileHeader}>
         <Avatar avatar={avatar} />
@@ -37,6 +37,6 @@ export const Profile = () => {
       </div>
       {/* {renderOptions}
       <Option /> */}
-    </main>
+    </section>
   );
 };

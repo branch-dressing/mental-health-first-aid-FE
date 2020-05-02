@@ -12,7 +12,7 @@ export const Login = () => {
         <input required
           type='text'
           value={email}
-          onChange={({ target }) => setEmail(target.value)} />
+          onChange={({ target }) => setEmail(target.value.toLowerCase())} />
         <label>Password: <span onClick={() => setHidePassword(!hidePassword)}>👁‍🗨</span></label>
         <input required
           type={hidePassword ? 'password' : 'text'}

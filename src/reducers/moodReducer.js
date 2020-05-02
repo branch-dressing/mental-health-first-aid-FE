@@ -1,4 +1,4 @@
-import { SET_ALL_MOODS, SET_MOOD_ERROR, SET_MOOD_LOADING, SET_MOOD_DONE, SET_CURRENT_MOOD, SET_MOOD_UPDATED } from '../actions/moodActions';
+import { SET_ALL_MOODS, SET_MOOD_ERROR, SET_MOOD_LOADING, SET_MOOD_DONE, SET_CURRENT_MOOD, SET_MOOD_UPDATED, SET_MOOD_LOGOUT } from '../actions/moodActions';
 
 const initialState = {
   currentMood: null,
@@ -16,6 +16,7 @@ export const moodReducer = (state = initialState, action) => {
     case SET_MOOD_DONE: return { ...state, loading: false };
     case SET_MOOD_UPDATED: return { ...state, updated: action.payload };
     case SET_MOOD_ERROR: return { ...state, loading: false, error: action. payload };
+    case SET_MOOD_LOGOUT: return initialState;
     default: return state;
   }
 };
