@@ -43,7 +43,7 @@ export const Moods = () => {
       {editing ? (
         <div>
           <MoodForm importId={currentMood._id} importMoodName={currentMood.moodName} importSolutions={currentMood.solutions}/>
-          <button onClick={handleEdit}>Cancel</button>
+          <button onClick={handleEdit}>Back</button>
         </div>
       ) : (
         <div>

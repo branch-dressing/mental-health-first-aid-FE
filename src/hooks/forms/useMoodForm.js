@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchPostMood, SET_MOOD_ERROR, fetchPatchMood } from '../../actions/moodActions';
+import { fetchPostMood, SET_MOOD_ERROR, fetchPatchMood, moodsNeedToBeUpdate } from '../../actions/moodActions';
 
 export const useMoodForm = (state) => {
   const dispatch = useDispatch();

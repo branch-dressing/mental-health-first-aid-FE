@@ -59,7 +59,7 @@ export const fetchPatchMood = (id, body) => dispatch => {
   dispatch(setMoodLoading());
   return updateMood(id, body)
     .then(() => {
-      dispatch(moodsNeedToBeUpdate());
+      dispatch(moodsNeedToBeUpdate(true));
       return dispatch(setMoodDone());
     })
     .catch(moodError => dispatch(setMoodError(moodError)));
